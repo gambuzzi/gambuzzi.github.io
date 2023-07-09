@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+       ______
+          |             .
+          |           __|___       ^'.           .-
+          |  .          |         / \ '..----..'`/ \
+          |  |  . ,''   |         '  '   /      \  |
+          |  |  | |     |         \ , `''         /
+      ,   .  |  |  `.   |          /  ()    ()    `
+       \  |  |  ;    |  |         /      _         \
+        '-'  `'` ,_,'   |  /     '      \_/         '
+          .             '-'       `.    ,_        .`'.
+  |     __|___.                     `-._/ \,   _.'\   `.
+  |       | __|___                    _(__/        `...'^.
+  |  ,'   |   |    o             |   /    `\          ,--.'
+  ;,'   o |   |    |        .-,  |  |       `.  /    |     ".
+  | \   | |   |    | | .-. /  |  |  \_| \_,   ''     '       `
+  |  \  | |   |    | |/  | |  |  |    `-'\            `._     \
+  |   \ | |  /|    | |   | ;  |  |    '   '.             ' --.'
+  |    `| '-' |  / ` |   |  `-|  |   /   '  `'--'       ,.    |
+        `     '-'    |   `-'  |  o  /    |            .'      /
+  ____________________________|_____________________________mx
+                              |
+                           \  |
+                            '-'
+-->
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Gambuzzi.it</title>
+  <link rel="icon" type="image/png" href="./favicon.ico">
+  <style type="text/css">
+    @font-face {
+      font-family: term;
+      src: url("./term.ttf") format("truetype");
+    }
+
+    body {
+      margin: 0 auto;
+      background-color: #051005;
+      color: #30bb30;
+      font-size: 30pt;
+      font-family: "term", monospace;
+      text-shadow: 0 0 0.4em #30bb30;
+      width: 1280px;
+    }
+
+    h1 {
+      font-weight: normal;
+      font-size: 100%;
+      display: inline;
+    }
+
+    h2 {
+      font-weight: normal;
+      font-size: 100%;
+      margin: 0;
+      display: inline;
+      color: #ffffff;
+      text-shadow:
+        0 0 0.2em #ffffff,
+        0 0 0.4em #ffffff,
+        0 0 0.8em #ffffff,
+        0 0 1.6em #ffffff;
+    }
+
+    div.pre {
+      white-space: pre;
+    }
+
+    span.quiet {
+      color: #156615;
+      text-shadow:
+        0 0 0.4em #156615,
+        0 0 0.8em #156615;
+    }
+
+    a {
+      outline: none;
+      text-decoration: none;
+      color: #b0ffb0;
+      text-shadow:
+        0 0 0.2em #b0ffb0,
+        0 0 0.4em #b0ffb0,
+        0 0 0.8em #b0ffb0,
+        0 0 1.6em #b0ffb0;
+    }
+
+    a:hover {
+      color: #ffffff;
+      text-shadow:
+        0 0 0.2em #ffffff,
+        0 0 0.4em #ffffff,
+        0 0 0.8em #ffffff,
+        0 0 1.6em #ffffff;
+    }
+
+    #cursor {
+      display: none;
+    }
+  </style>
+  <script type="text/javascript">
+    window.onload = function () {
+      const cursor = document.getElementById('cursor');
+
+      let op = 1;
+      let direction = -0.1;
+      setInterval(function () {
+        cursor.style.opacity = op < 0 ? 0 : (op > 1 ? 1 : op);
+        op += direction;
+        if ((op <= -1) || (op >= 3)) {
+          direction = -direction;
+        }
+      }, 10);
+    };
+  </script>
+</head>
+
+<body class="vsc-initialized">
+  <main>
+  <div class="pre">
+    <h1><strong>Gambuzzi.it</strong></h1>
+    <h2>INVENT AND SIMPLIFY</h2>
+
+    Principal software Engineer.
+    Magento certified developer.
+    Software Developer since 1997.
+
+<!--          56 -->
+    <h2 id="contact">--- Contacts -----------------------------</h2>
+
+    I am always open to chat about technology.
+
+    roberto (at) gambuzzi.it
+
+    <h2 id="social">--- Social -------------------------------</h2>
+
+    * <a href="https://twitter.com/gbinside" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span
+        class="network-name">Twitter</span></a>
+    * <a href="https://github.com/gbinside" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span
+        class="network-name">Github</span></a>
+    * <a href="https://github.com/gambuzzi" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span
+        class="network-name">Github (work)</span></a>
+    * <a href="https://www.linkedin.com/in/gambuzzi/" class="btn btn-default btn-lg"><i
+        class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
+
+    See you space cowboy...<span id="cursor"
+      style="display: inline-block; position: relative; color: rgb(48, 187, 48);">|<span
+        style="position: absolute; left: -4px; top: 0px;">|</span><span
+        style="position: absolute; left: -2px; top: 0px;">|</span><span
+        style="position: absolute; left: 0px; top: 0px;">|</span><span
+        style="position: absolute; left: 2px; top: 0px;">|</span><span
+        style="position: absolute; left: 4px; top: 0px;">|</span></span>
+         
+    Copyright &copy; 2023
+  </div>
+  </main>
+</body>
+
+</html>
