@@ -1,0 +1,29 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 400,
+    "height": 200,
+    "padding": 5,
+      "data": {"values": [
+        {"version": "Numba dict", "secs": 0.70, "mult":"0.70s (1x)"},
+        {"version": "Numba array", "secs": 0.14, "mult":"0.14s (5x)"},
+        {"version": "GPU", "secs": 0.0088, "mult":"8.8ms (80x)"}
+      ]},
+    "encoding": {
+      "y": {"field": "version", "type": "nominal"},
+      "x": {"field": "secs", "type": "quantitative", "scale": {"domain": [0, 0.8]}}
+    },
+    "layer": [{
+      "mark": "bar"
+    }, {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 3
+      },
+      "encoding": {
+        "text": {"field": "mult", "type": "nominal"}
+      }
+    }]
+  }
+  
