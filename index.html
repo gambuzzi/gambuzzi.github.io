@@ -119,7 +119,7 @@
 
 <body class="vsc-initialized">
   <main>
-  <div class="pre">
+  <div class="pre"><span id="main">
     <h1><strong>Gambuzzi.it</strong></h1>
     <h2>INVENT AND SIMPLIFY</h2>
 
@@ -143,17 +143,72 @@
     * <a href="https://www.linkedin.com/in/gambuzzi/" class="btn btn-default btn-lg"><i
         class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
 
-    See you space cowboy...<span id="cursor"
+    Copyright &copy; 2025
+
+    See you space cowboy...</span><span id="cursor"
       style="display: inline-block; position: relative; color: rgb(48, 187, 48);">|<span
         style="position: absolute; left: -4px; top: 0px;">|</span><span
         style="position: absolute; left: -2px; top: 0px;">|</span><span
         style="position: absolute; left: 0px; top: 0px;">|</span><span
         style="position: absolute; left: 2px; top: 0px;">|</span><span
         style="position: absolute; left: 4px; top: 0px;">|</span></span>
-         
-    Copyright &copy; 2025
   </div>
   </main>
 </body>
 
 </html>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const container = document.getElementById('main');
+  const originalHTML = container.innerHTML;
+  container.innerHTML = "";
+
+  let i = 0;
+  let output = "";
+  const typingSpeed = 20;
+  let skip = false;
+
+  function typeNext() {
+    if (skip) {
+      container.innerHTML = originalHTML;
+      return;
+    }
+
+    if (i >= originalHTML.length) {
+      return;
+    }
+    const nextChar = originalHTML[i];
+
+    if (nextChar === "<") {
+      // If it's a tag, copy the whole tag immediately
+      const tagEnd = originalHTML.indexOf(">", i);
+      if (tagEnd === -1) return; // Invalid HTML
+
+      const tag = originalHTML.slice(i, tagEnd + 1);
+      output += tag;
+      i = tagEnd + 1;
+    } else {
+      output += nextChar;
+      i++;
+    }
+
+    container.innerHTML = output;
+    setTimeout(typeNext, typingSpeed);
+  }
+
+  // Handle skip on user interaction
+  function skipAnimation() {
+    if (!skip) {
+      skip = true;
+      clearTimeout(typingTimeout);
+      container.innerHTML = originalHTML;
+    }
+  }
+
+  document.addEventListener("click", skipAnimation);
+  document.addEventListener("keydown", skipAnimation);
+
+  typeNext();
+});
+</script>
